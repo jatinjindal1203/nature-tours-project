@@ -169,7 +169,7 @@ const tourSchema = new mongoose.Schema({
   tourSchema.pre(/^find/, function(next) {
     this.populate({
       path: 'guides',
-      select: 'name role'
+      select: 'name role photo'
     });
     next();
   });
