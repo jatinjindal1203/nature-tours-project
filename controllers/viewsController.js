@@ -9,7 +9,7 @@ exports.getOverview = catchAsync( async (req, res, next) => {
 
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com http://127.0.0.1:3000; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
+        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
       ).render('overview', {
         title: 'All Tours',
         tours
@@ -28,7 +28,7 @@ exports.getTour = catchAsync( async (req, res, next) => {
 
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://*.mapbox.com https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com http://127.0.0.1:3000; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
+        "default-src 'self' https://*.mapbox.com https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
       ).render('tour', {
         title: `${tour.name} Tour`,
         tour
@@ -38,7 +38,7 @@ exports.getTour = catchAsync( async (req, res, next) => {
 exports.getLoginForm = (req, res) => {
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://*.cloudflare.com https://js.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com http://127.0.0.1:3000 ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+        "default-src 'self' https://*.cloudflare.com https://js.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
       ).render('login', {
         title: 'Log in to your account'
     });
@@ -47,7 +47,7 @@ exports.getLoginForm = (req, res) => {
 exports.getAccount = (req, res) => {
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com http://127.0.0.1:3000; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
+        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
       ).render('account', {
         title: 'Your account'
     });
@@ -63,7 +63,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com http://127.0.0.1:3000; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
+        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
       ).render('overview', {
         title: 'My Tours',
         tours
@@ -82,7 +82,7 @@ exports.updateUserData =catchAsync( async (req, res, next) => {
 
     res.status(200).set(
         'Content-Security-Policy',
-        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: http://127.0.0.1:3000; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com http://127.0.0.1:3000; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
+        "default-src 'self' https://js.stripe.com; base-uri 'self'; block-all-mixed-content; font-src 'self' https: data:; frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;"
       ).render('account', {
         title: 'Your account',
         user: updatedUser
