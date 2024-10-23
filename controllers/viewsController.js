@@ -44,6 +44,15 @@ exports.getLoginForm = (req, res) => {
     });
 };
 
+exports.getSignUpForm = (req, res) => {
+  res.status(200).set(
+      'Content-Security-Policy',
+      "default-src 'self' https://*.cloudflare.com https://js.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self' blob: https://*.cloudflare.com https://js.stripe.com; script-src-elem 'self' https://cdnjs.cloudflare.com https://js.stripe.com; script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+    ).render('signup', {
+      title: 'Create a new account'
+  });
+};
+
 exports.getAccount = (req, res) => {
     res.status(200).set(
         'Content-Security-Policy',
